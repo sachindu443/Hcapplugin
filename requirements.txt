@@ -1,0 +1,7 @@
+aiohttp==3.3.2
+colorama==0.4.3
+numpy==1.17.4
+selenium==3.141.0
+requests==2.22.0
+opencv_python==4.1.2.30
+cvlib==0.2.5
