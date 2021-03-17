@@ -1,6 +1,7 @@
 from selenium.webdriver.chrome.options import Options
 from colorama import Fore, init
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 import numpy as np
 import cvlib as cv
 import requests,json,time,cv2,asyncio,aiohttp,json,os
@@ -74,7 +75,7 @@ async def get_n(req):
     options = Options()
     options.headless = True
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     with open("result.js", "r") as f:
         return driver.execute_script(f.read() + f"return hsw('{req}');")
 
